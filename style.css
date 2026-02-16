@@ -1,16 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/minecraftia');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
+/* ALLES Minecraft-Schrift außer Titel */
+body, p, h2, h3, a, button, .feature-card, .subtitle {
+    font-family: 'Minecraftia', sans-serif;
+}
+
+/* ⭐ Soft Dark Wave Background */
 body {
-    background: #0d0d0d;
+    background: radial-gradient(circle at 20% 20%, #2a2a2a, #0f0f0f 60%),
+                radial-gradient(circle at 80% 80%, #1c1c1c, #0d0d0d 60%);
+    background-size: 200% 200%;
+    animation: softWave 14s ease-in-out infinite;
     color: white;
     overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes softWave {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* TITEL = normale Schrift */
+.normal-font {
+    font-family: Arial, sans-serif !important;
 }
 
 /* Logo */
@@ -27,45 +47,46 @@ body {
 
 /* Hero */
 .hero {
-    height: 65vh; /* kleiner, damit Features sichtbar werden */
-    background: url('header.jpg') center/cover no-repeat;
+    height: 55vh;
+    background: url('images/header.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.25); /* helleres Overlay */
+    background: rgba(0,0,0,0.25);
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+
+    /* Blur-Kasten hinter Titel */
+    padding: 20px 40px;
+    background: rgba(20, 20, 20, 0.35);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Neon Glow Title */
+/* Glow für Titel */
 .glow {
     font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 4px;
     color: #ff0055;
     text-shadow:
-        0 0 10px #ff0055,
-        0 0 20px #ff0055,
-        0 0 40px #ff0055,
-        0 0 80px #ff0055;
+        0 0 3px #ff0055,
+        0 0 6px #ff0055,
+        0 0 10px #ff0055;
 }
 
-.subtitle {
-    margin-top: 10px;
-    font-size: 1.2rem;
-}
-
+/* Buttons */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -73,11 +94,19 @@ body {
     background: #ff0055;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 4px;
     transition: 0.3s;
+    position: relative;
+    z-index: 5;
 }
 
-.btn:hover {
+/* ALLE BUTTONS LEUCHTEN */
+.btn:hover,
+.btn.secondary:hover {
+    box-shadow:
+        0 0 8px #ff3377,
+        0 0 16px #ff3377,
+        0 0 24px #ff3377;
     background: #ff3377;
 }
 
@@ -85,32 +114,27 @@ body {
     background: #333;
 }
 
-.btn.secondary:hover {
-    background: #555;
-}
-
+/* Sections */
 .section {
-    padding: 70px 10%;
+    padding: 60px 10%;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-/* Features sichtbar */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
+/* Feature-Kästen mit Blur */
 .feature-card {
-    background: #1a1a1a;
+    background: rgba(20, 20, 20, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 25px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
+    background: rgba(30, 30, 30, 0.45);
 }
 
 /* Gallery */
@@ -131,13 +155,6 @@ body {
     transform: scale(1.05);
 }
 
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #111;
-    margin-top: 40px;
-}
-
 /* Fade-in */
 .fade-in {
     opacity: 0;
@@ -150,17 +167,25 @@ footer {
     transform: translateY(0);
 }
 
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #111;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
 /* MOBILE FIX */
 @media (max-width: 600px) {
 
     .glow {
         font-size: 2rem;
-        letter-spacing: 2px;
     }
 
     .hero {
-        height: 50vh;
-        background-position: top;
+        height: 45vh;
     }
 
     .logo img {
