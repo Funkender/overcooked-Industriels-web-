@@ -11,17 +11,17 @@ body, p, h2, h3, a, button, .feature-card, .subtitle {
     font-family: 'Minecraftia', sans-serif;
 }
 
-/* ⭐ LIQUID 4-COLOR WAVE BACKGROUND (deine Farben) */
+/* ⭐ LIQUID 4-COLOR WAVE BACKGROUND — jetzt dunkler, mehr Schwarz */
 body {
     background:
-        radial-gradient(circle at 20% 30%, #7a0018 0%, transparent 55%),
-        radial-gradient(circle at 75% 25%, #2b2b2b 0%, transparent 55%),
-        radial-gradient(circle at 40% 80%, #000000 0%, transparent 55%),
-        radial-gradient(circle at 85% 70%, #ff6a00 0%, transparent 55%),
-        #0a0a0a;
+        radial-gradient(circle at 20% 30%, #3a000c 0%, transparent 45%),
+        radial-gradient(circle at 75% 25%, #111111 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, #000000 0%, transparent 65%),
+        radial-gradient(circle at 85% 70%, #ff3d00 0%, transparent 50%),
+        #000000;
 
     background-size: 200% 200%;
-    animation: liquidWave 9s ease-in-out infinite;
+    animation: liquidWave 12s ease-in-out infinite; /* ⭐ langsamer */
     color: white;
     overflow-x: hidden;
     position: relative;
@@ -35,11 +35,11 @@ body {
     100% { background-position: 0% 0%; }
 }
 
-/* ⭐ BASIS FÜR ALLE SLIDE-IN EFFEKTE */
+/* ⭐ BASIS FÜR ALLE SLIDE-IN EFFEKTE — jetzt langsamer */
 .fade-in {
     opacity: 0;
     filter: blur(12px);
-    transition: all 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 3.4s cubic-bezier(0.16, 1, 0.3, 1); /* ⭐ deutlich langsamer */
 }
 
 /* ⭐ SLIDE VON UNTEN */
@@ -55,7 +55,7 @@ body {
 
 /* ⭐ SLIDE VON LINKS */
 .fade-in.left {
-    transform: translateX(-180px);
+    transform: translateX(-200px); /* ⭐ weiter raus */
 }
 
 .fade-in.left.visible {
@@ -66,7 +66,7 @@ body {
 
 /* ⭐ SLIDE VON RECHTS */
 .fade-in.right {
-    transform: translateX(180px);
+    transform: translateX(200px); /* ⭐ weiter raus */
 }
 
 .fade-in.right.visible {
@@ -183,6 +183,23 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
     padding: 35px;
     transition: 0.4s;
+}
+
+/* ⭐ Feature Cards jetzt mit Slide-Richtung */
+.feature-card:nth-child(1) { /* Fly */
+    transform: translateX(200px);
+}
+.feature-card:nth-child(2) { /* No-Gravity */
+    transform: translateX(-200px);
+}
+.feature-card:nth-child(3) { /* No-Fall */
+    transform: translateX(200px);
+}
+
+.feature-card.visible {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
 }
 
 .feature-card:hover {
