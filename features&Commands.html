@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features & Commands – Overcooked Industrials</title>
+
+    <!-- Menü + Fonts -->
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <style>
+        /* ⭐ Minecraft + Emoji Fix */
+        body, p, h2, h3, a, button, .card {
+            font-family: 'Minecraftia', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+        }
+
+        /* ⭐ Hintergrund */
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+
+            background:
+                radial-gradient(circle at 20% 30%, #3a000c 0%, transparent 45%),
+                radial-gradient(circle at 75% 25%, #111111 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, #000000 0%, transparent 65%),
+                radial-gradient(circle at 85% 70%, #ff3d00 0%, transparent 50%),
+                #000000;
+
+            background-size: 200% 200%;
+            animation: waveMove 12s ease-in-out infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes waveMove {
+            0% { background-position: 0% 0%; }
+            25% { background-position: 100% 20%; }
+            50% { background-position: 60% 100%; }
+            75% { background-position: 20% 60%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* ⭐ Logo */
+        .logo {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 20;
+        }
+
+        .logo img {
+            width: 90px;
+        }
+
+        /* ⭐ Container */
+        .content-box {
+            max-width: 900px;
+            margin: 150px auto 80px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* ⭐ Titel */
+        .page-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff0055;
+            text-shadow:
+                0 0 4px #ff0055,
+                0 0 10px #ff0055,
+                0 0 18px #ff0055;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #ff3377;
+        }
+
+        /* ⭐ Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 14px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            opacity: 0;
+            filter: blur(12px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .card h3 {
+            color: #ff0055;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        /* ⭐ Slide Animations */
+        .slide-left {
+            transform: translateX(-200px);
+            transition: all 3.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide-right {
+            transform: translateX(200px);
+            transition: all 3.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visible {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+            filter: blur(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ⭐ Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div>
+
+    <!-- ⭐ Menü Button -->
+    <div class="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- ⭐ Menü -->
+    <nav class="side-menu">
+        <div class="menu-item" onclick="location.href='index.html'">About Us</div>
+        <div class="menu-item" onclick="location.href='client.html'">Deep Fried Client</div>
+        <div class="menu-item" onclick="location.href='socials.html'">Socials</div>
+        <div class="menu-item" onclick="location.href='features&commands.html'">Features & Commands</div>
+    </nav>
+
+    <!-- ⭐ Inhalt -->
+    <div class="content-box">
+        <h1 class="page-title">Features & Commands</h1>
+
+        <!-- ⭐ FEATURES -->
+        <h2>Features</h2>
+        <div class="grid">
+
+            <div class="card slide-right">
+                <h3>🕊️ Fly</h3>
+                <p>Fliege frei durch die Welt ohne Einschränkungen.</p>
+            </div>
+
+            <div class="card slide-left">
+                <h3>🌌 No‑Gravity</h3>
+                <p>Schwerkraft komplett deaktivieren – schwebe überall.</p>
+            </div>
+
+            <div class="card slide-right">
+                <h3>🛡️ No‑Fall</h3>
+                <p>Kein Fallschaden mehr – egal aus welcher Höhe.</p>
+            </div>
+
+            <div class="card slide-left">
+                <h3>⚡ Speed</h3>
+                <p>Bewege dich schneller als jeder andere Spieler.</p>
+            </div>
+
+            <div class="card slide-right">
+                <h3>👁️ Fullbright</h3>
+                <p>Die Welt ist immer hell – auch in Höhlen.</p>
+            </div>
+
+        </div>
+
+        <!-- ⭐ COMMANDS -->
+        <h2>Commands</h2>
+        <div class="grid">
+
+            <div class="card slide-left">
+                <h3>/fly</h3>
+                <p>Aktiviert oder deaktiviert Fly.</p>
+            </div>
+
+            <div class="card slide-right">
+                <h3>/gravity</h3>
+                <p>Schaltet No‑Gravity ein oder aus.</p>
+            </div>
+
+            <div class="card slide-left">
+                <h3>/nofall</h3>
+                <p>Kein Fallschaden mehr.</p>
+            </div>
+
+            <div class="card slide-right">
+                <h3>/speed &lt;1‑10&gt;</h3>
+                <p>Setzt deine Geschwindigkeit.</p>
+            </div>
+
+            <div class="card slide-left">
+                <h3>/fullbright</h3>
+                <p>Aktiviert Fullbright.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        function checkCards() {
+            const trigger = window.innerHeight * 0.85;
+
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < trigger) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCards);
+        window.addEventListener('load', checkCards);
+    </script>
+
+</body>
+</html>
